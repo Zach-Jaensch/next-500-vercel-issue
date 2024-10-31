@@ -4,9 +4,9 @@ This issue is a minimum reproduction of our companies app.
 
 On the main page there are 2 links that go to a dynamic server rendered page.
 
-The first link "Page that throws" with bring you to the defined 500 error page (as it throws in the getServerSideProps)
+The first link "Page that throws" will bring you to the defined 500 error page (as it throws in the getServerSideProps)
 
-The second link "Page that rewrites to a throw" will be rewritten in the middle to the same page as link 1.
+The second link "Page that rewrites to a throw" will be rewritten in the middleware to the same page as the first link.
 
 Locally in a production build, they will both show the defined 500 page.
 
