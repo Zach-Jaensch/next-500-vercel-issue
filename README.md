@@ -16,6 +16,6 @@ This only occurs when the basePath is configured in `next.config.ts` file.
 
 ## Steps to reproduce
 
-Deploy app to vercel.
-Go to <VERCEL_DEPLOYMENT_URL>/library
-Click on the second link
+- Deploy app to vercel.
+- Go to <VERCEL_DEPLOYMENT_URL>/library
+- Click on the second link
