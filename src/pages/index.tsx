@@ -5,7 +5,7 @@ export default function Home() {
     <div>
       <main>
         <Link href="/throws">Page that throws</Link>
-        <Link href="/rewrite">Page that rewrites to a throw</Link>
+        <Link href="/?q=any">Page that rewrites to a throw</Link>
       </main>
     </div>
   );
