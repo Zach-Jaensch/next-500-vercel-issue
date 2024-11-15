@@ -11,7 +11,7 @@ export default function Home() {
         <Link href="/?q=any">Page that rewrites to a throw</Link>
         <Link href="/category_1">Dynamic page link 1</Link>
         <Link href="/category_2">Dynamic page link 2</Link>
-        <p>Slug: {params.slug}</p>
+        <p>Slug: {params?.slug || "No Slug"}</p>
       </main>
     </div>
   );
