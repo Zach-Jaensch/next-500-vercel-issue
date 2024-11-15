@@ -1,6 +1,9 @@
 import Link from "next/link";
+import { useParams } from "next/navigation";
 
 export default function Home() {
+  const params = useParams<{ slug: string }>();
+
   return (
     <div className="flex w-full h-dvh">
       <main className="flex flex-col gap-4 m-auto justify-center items-center">
@@ -8,6 +11,7 @@ export default function Home() {
         <Link href="/?q=any">Page that rewrites to a throw</Link>
         <Link href="/category_1">Dynamic page link 1</Link>
         <Link href="/category_2">Dynamic page link 2</Link>
+        <p>Slug: {params.slug}</p>
       </main>
     </div>
   );
