@@ -28,3 +28,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
     fallback: "blocking",
   };
 };
+
+export const getStaticProps = async () => {
+  return {
+    props: {},
+  };
+};
