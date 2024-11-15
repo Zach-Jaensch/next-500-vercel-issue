@@ -1,7 +1,8 @@
+import { GetStaticPaths } from "next";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 
-export default function Home() {
+export default function Category() {
   const params = useParams<{ slug: string }>();
 
   return (
@@ -16,3 +17,14 @@ export default function Home() {
     </div>
   );
 }
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const paths = [
+    { params: { slug: "category_1" } },
+    { params: { slug: "category_2" } },
+  ];
+  return {
+    paths,
+    fallback: "blocking",
+  };
+};
