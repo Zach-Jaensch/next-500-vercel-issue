@@ -1,8 +1,9 @@
+import { PageWithLayout } from "#/utils/page-with-layout";
 import { GetStaticPaths } from "next";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 
-export default function Category() {
+function Category() {
   const params = useParams<{ slug: string }>();
 
   return (
@@ -12,11 +13,30 @@ export default function Category() {
         <Link href="/?q=any">Page that rewrites to a throw</Link>
         <Link href="/category_1">Dynamic page link 1</Link>
         <Link href="/category_2">Dynamic page link 2</Link>
-        <p>Slug: {params?.slug || "No Slug"}</p>
+        <p>Slug in page: {params?.slug || "No Slug"}</p>
       </main>
     </div>
   );
 }
+
+function LayoutComponent() {
+  const params = useParams<{ slug: string }>();
+
+  return (
+    <div>
+      <p>Slug in layout: {params?.slug || "No Slug"}</p>
+    </div>
+  );
+}
+
+export default PageWithLayout(Category, function getLayout(page) {
+  return (
+    <div>
+      <LayoutComponent />
+      {page}
+    </div>
+  );
+});
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = [
